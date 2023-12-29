@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Form</title>
+    <script type="module" crossorigin src="./assets/index-nFvAjy1O.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-fESR5CZa.css">
+  </head>
+  <body>
+    <section class="" id="createPage">
+      <div class="max-w-sm my-5 mx-auto" id="response">
+        <form action="next.php" method="GET" name="signupForm" id="signupForm">
+          <h1 class="text-3xl font-extrabold mb-2 text-center">Sign Up</h1>
+          <h2 class="mb-3 text-gray-700 text-center">It's quick and easy.</h2>
+          <div class="space-y-5 space-x-1 pt-5">
+            <section class="grid grid-cols-2 gap-x-5">
+              <input
+                type="text"
+                name="firstName"
+                id="firstName"
+                required
+                placeholder="FirstName"
+                class="p-1"
+              />
+              <input
+                type="text"
+                name="surName"
+                id="surName"
+                required
+                placeholder="Surname"
+                class="p-1"
+              />
+            </section>
+
+            <div>
+              <input
+                type="text"
+                name="email"
+                id="email"
+                required
+                placeholder="Enter your E-mail ID"
+                class="p-1 max-w-sm w-full"
+              />
+            </div>
+            <div>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                required
+                placeholder="New Password"
+                class="p-1 max-w-sm w-full"
+              />
+            </div>
+
+            <div>
+              <label>Date of birth</label>
+              <input
+                type="date"
+                name="dob"
+                id="dob"
+                class="p-2 rounded-xl outline-none"
+                required
+              />
+            </div>
+
+            <div id="gender" class="flex space-x-6">
+              <label>Gender</label>
+              <div>
+                <label>
+                  <input type="radio" name="gender" value="male" /> Male
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input type="radio" name="gender" value="female" /> Female
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input type="radio" name="gender" value="custom" /> Custom
+                </label>
+              </div>
+            </div>
+            <div class="space-y-2 text-center">
+              <h1 class="text-blue-700 text-xl font-semibold">Stay tuned...</h1>
+              <h1 class="text-blue-600 text-lg font-semibold">
+                we are comming soon...
+              </h1>
+              <p class="text-blue-500 text-md font-semibold">
+                sign up for more information
+              </p>
+            </div>
+            <div class="text-center">
+              <button
+                type="submit"
+                id="signUp"
+                class="bg-green-500 hover:bg-green-400 p-4 rounded-md text-white text-bold"
+              >
+                Sign Up
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div
+        class="bg-white rounded p-5 max-w-6xl mx-auto mt-10 hidden"
+        id="signUpData"
+      >
+        <div class="flex items-center space-x-2">
+          <h4 class="font-semibold text-xl">Resgistered Users</h4>
+        </div>
+        <div class="my-5 space-y-5">
+          <table class="table table-fixed border w-full text-center">
+            <tr>
+              <th class="px-2 py-1 border">FirstName</th>
+              <th class="px-2 py-1 border">SurName</th>
+              <th class="px-2 py-1 border">E-mail ID</th>
+              <th class="px-2 py-1 border">Date of birth</th>
+              <th class="px-2 py-1 border">Gender</th>
+              <th class="px-2 py-1 border w-20"></th>
+            </tr>
+            <tbody id="signUpDataTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
