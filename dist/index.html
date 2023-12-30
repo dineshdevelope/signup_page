@@ -4,36 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up Form</title>
-    <script type="module" crossorigin src="./assets/index-i9C39i19.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-FWoP52Mz.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script type="module" crossorigin src="./assets/index-tbKKx3BJ.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-WcGGTsaY.css">
   </head>
   <body>
     <section>
       <div
-        class="max-w-md mt-5 mx-auto border-double border-4 border-indigo-300 px-5 py-3"
+        class="max-w-md mt-5 mx-auto border-double border-4 border-cyan-200 px-5 py-3 rounded-xl bg-blue-50"
         id="response"
       >
         <form action="next.php" method="GET" name="signupForm" id="signupForm">
-          <h1 class="text-3xl font-extrabold mb-2 text-center">Sign Up</h1>
-          <h2 class="mb-3 text-gray-700 text-center">It's quick and easy.</h2>
+          <h1 class="text-3xl font-extrabold mb-2 text-center text-cyan-300">
+            Sign Up
+          </h1>
+          <h2 class="mb-3 text-center text-cyan-300 font-semibold">
+            It's quick and easy.
+          </h2>
           <div class="space-y-5 space-x-1 pt-5">
             <section class="grid grid-cols-2 gap-x-5">
-              <input
-                type="text"
-                name="firstName"
-                id="firstName"
-                required
-                placeholder="FirstName"
-                class="p-1 outline-gray-300"
-              />
-              <input
-                type="text"
-                name="surName"
-                id="surName"
-                required
-                placeholder="Surname"
-                class="p-1 outline-gray-300"
-              />
+              <div>
+                <input
+                  type="text"
+                  name="firstName"
+                  id="firstName"
+                  required
+                  placeholder="FirstName"
+                  class="p-1 outline-gray-300"
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  name="surName"
+                  id="surName"
+                  required
+                  placeholder="Surname"
+                  class="p-1 outline-gray-300"
+                />
+              </div>
             </section>
 
             <div>
@@ -108,7 +118,7 @@
         </form>
       </div>
       <div
-        class="bg-white rounded p-5 max-w-6xl mx-auto mt-10 hidden"
+        class="bg-white rounded p-5 max-w-5xl mx-auto mt-10 hidden"
         id="signUpData"
       >
         <div class="flex items-center space-x-2">
@@ -116,14 +126,14 @@
         </div>
         <div class="my-5 space-y-5">
           <table
-            class="table table-fixed border w-full text-center border-double border-indigo-300"
+            class="table table-fixed border w-full text-center border-double border-indigo-300 rounded"
           >
             <tr>
-              <th class="px-2 py-1 border">FirstName</th>
-              <th class="px-2 py-1 border">SurName</th>
-              <th class="px-2 py-1 border">E-mail ID</th>
-              <th class="px-2 py-1 border">Date of birth</th>
-              <th class="px-2 py-1 border">Gender</th>
+              <th class="tabledata">FirstName</th>
+              <th class="tabledata">SurName</th>
+              <th class="tabledata">E-mail ID</th>
+              <th class="tabledata">Date of birth</th>
+              <th class="tabledata">Gender</th>
               <th class="px-2 py-1 border w-20"></th>
             </tr>
             <tbody id="signUpDataTable"></tbody>

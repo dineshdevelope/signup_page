@@ -1,11 +1,13 @@
 import JustValidate from "just-validate";
 
+//getting form elements
 const formEl = document.getElementById("signupForm");
 
 const validateForm = new JustValidate(formEl, {
   validateBeforeSubmitting: true,
 });
 
+//  --- javascript validations part start
 validateForm.addField(
   "#firstName",
   [
@@ -57,7 +59,7 @@ validateForm.addField(
     },
     {
       rule: "maxLength",
-      value: 25,
+      value: 35,
     },
     {
       rule: "minLength",
@@ -81,7 +83,7 @@ validateForm.addField(
     },
     {
       rule: "maxLength",
-      value: 12,
+      value: 15,
     },
     {
       rule: "minLength",
@@ -104,24 +106,30 @@ validateForm.addField(
     errorLabelCssClass: ["form-error"],
   }
 );
+// javascript validations part end ---
 
 const localStorageKey = "signUpData";
 
 validateForm.onSuccess(() => {
   const formData = new FormData(formEl);
 
+  //to specify the id
   const entryId = Date.now().toString();
-
   console.log(entryId);
 
+  //convert formData into obj form
   const formValueObj = Object.fromEntries(formData.entries());
 
+  //add a ["id"] in that obj
   formValueObj.id = entryId;
 
+  //to get a localStorage Data
   const existingSignUpData = localStorage.getItem(localStorageKey);
 
+  //to parrse that data
   const existingSignUpArray = JSON.parse(existingSignUpData);
 
+  //creating empty array to push my values
   const newSignUpData = [];
 
   if (existingSignUpArray) {
@@ -158,40 +166,43 @@ function getAllSignUpDatas() {
 
     signUpDataArr.map((signUpData) => {
       const trEl = document.createElement("tr");
-      const tdEl = document.createElement("td");
-      const td2El = document.createElement("td");
-      const td3El = document.createElement("td");
-      const td4El = document.createElement("td");
-      const td5El = document.createElement("td");
-      const deleteBtnEl = document.createElement("button");
+      const nameEl = document.createElement("td");
+      const surNameEl = document.createElement("td");
+      const mailEl = document.createElement("td");
+      const dateEl = document.createElement("td");
+      const genderEl = document.createElement("td");
+      const delBtnEl = document.createElement("button");
 
-      tdEl.classList.add("registereddata");
-      tdEl.textContent = signUpData.firstName;
+      //adding style and text content in table
+      nameEl.classList.add("registereddata");
+      nameEl.textContent = signUpData.firstName;
 
-      td2El.classList.add("registereddata");
-      td2El.textContent = signUpData.surName;
+      surNameEl.classList.add("registereddata");
+      surNameEl.textContent = signUpData.surName;
 
-      td3El.classList.add("registereddata");
-      td3El.textContent = signUpData.email;
+      mailEl.classList.add("registereddata");
+      mailEl.textContent = signUpData.email;
 
-      td4El.classList.add("registereddata");
-      td4El.textContent = signUpData.dob;
+      dateEl.classList.add("registereddata");
+      dateEl.textContent = signUpData.dob;
 
-      td5El.classList.add("registereddata");
-      td5El.textContent = signUpData.gender;
+      genderEl.classList.add("registereddata");
+      genderEl.textContent = signUpData.gender;
 
-      deleteBtnEl.className =
+      delBtnEl.className =
         "px-2 py-1 rounded bg-red-500 hover:bg-red-700 text-white text-sm text-semibold";
-      deleteBtnEl.textContent = "Delete";
+      delBtnEl.textContent = "Delete";
 
-      deleteBtnEl.addEventListener("click", (e) => {
+      delBtnEl.addEventListener("click", (e) => {
         deleteSignUp(signUpData);
       });
 
-      td5El.classList.add("registereddata");
-      td5El.append(deleteBtnEl);
+      genderEl.classList.add("registereddata");
+      genderEl.append(delBtnEl);
 
-      trEl.append(tdEl, td2El, td3El, td4El, td5El, deleteBtnEl);
+      // showing elements in UI
+
+      trEl.append(nameEl, surNameEl, mailEl, dateEl, genderEl, delBtnEl);
 
       newFinalValue.push(trEl);
     });
@@ -202,6 +213,7 @@ function getAllSignUpDatas() {
   }
 }
 
+// Delete Functionality
 function deleteSignUp(request) {
   const conform = confirm(`Are you sure want to delete?`);
 
@@ -213,6 +225,8 @@ function deleteSignUp(request) {
     const otherRecords = signUpDataObj.filter(
       (signUpReg) => signUpReg.id != request["id"]
     );
+
+    console.log(otherRecords);
 
     localStorage.setItem(localStorageKey, JSON.stringify(otherRecords));
 

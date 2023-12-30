@@ -9,3 +9,7 @@
 .registereddata {
   @apply px-2 py-1 border;
 }
+
+.tabledata {
+  @apply px-2 py-1 border text-indigo-500 font-mono;
+}
