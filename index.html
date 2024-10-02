@@ -11,7 +11,7 @@
   <body>
     <section>
       <div
-        class="max-w-md mt-5 mx-auto border-double border-4 border-cyan-200 px-5 py-3 rounded-xl bg-blue-50"
+        class="mt-5 w-full sm:max-w-md sm:mx-auto border-double border-4 border-cyan-200 px-5 py-3 rounded-xl bg-blue-50"
         id="response"
       >
         <form action="next.php" method="GET" name="signupForm" id="signupForm">
@@ -22,7 +22,9 @@
             It's quick and easy.
           </h2>
           <div class="space-y-5 space-x-1 pt-5">
-            <section class="grid grid-cols-2 gap-x-5">
+            <section
+              class="grid grid-cols-1 sm:grid-cols-2 gap-x-5 space-y-4 sm:space-y-0"
+            >
               <div>
                 <input
                   type="text"
@@ -30,7 +32,7 @@
                   id="firstName"
                   required
                   placeholder="FirstName"
-                  class="p-1 outline-gray-300"
+                  class="p-1 outline-gray-300 w-full"
                 />
               </div>
               <div>
@@ -40,7 +42,7 @@
                   id="surName"
                   required
                   placeholder="Surname"
-                  class="p-1 outline-gray-300"
+                  class="p-1 outline-gray-300 w-full"
                 />
               </div>
             </section>
@@ -125,7 +127,7 @@
         </div>
         <div class="my-5 space-y-5">
           <table
-            class="table table-fixed border w-full text-center border-double border-indigo-300 rounded"
+            class="table table-auto border w-full text-center border-double border-indigo-300 rounded"
           >
             <tr>
               <th class="tabledata">FirstName</th>
